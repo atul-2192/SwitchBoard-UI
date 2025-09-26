@@ -1,0 +1,40 @@
+/* Add Item Button Styles */
+.section-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.add-item-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6366f1;
+  background-color: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dark-mode .add-item-btn {
+  color: #818cf8;
+  background-color: rgba(129, 140, 248, 0.1);
+  border: 1px solid rgba(129, 140, 248, 0.2);
+}
+
+.add-item-btn:hover {
+  background-color: rgba(99, 102, 241, 0.15);
+  transform: translateY(-1px);
+}
+
+.dark-mode .add-item-btn:hover {
+  background-color: rgba(129, 140, 248, 0.15);
+}
+
+.add-item-btn svg {
+  color: currentColor;
+}

@@ -1,0 +1,128 @@
+/* Item Actions Styling */
+.item-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.skill-item:hover .item-actions,
+.project-card:hover .item-actions,
+.timeline-content:hover .item-actions,
+.education-card:hover .item-actions,
+.certification-card:hover .item-actions,
+.achievement-card:hover .item-actions {
+  opacity: 1;
+}
+
+.edit-btn, .delete-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-btn {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+}
+
+.dark-mode .edit-btn {
+  background-color: rgba(129, 140, 248, 0.2);
+  color: #818cf8;
+}
+
+.edit-btn:hover {
+  background-color: rgba(99, 102, 241, 0.2);
+  transform: translateY(-2px);
+}
+
+.dark-mode .edit-btn:hover {
+  background-color: rgba(129, 140, 248, 0.3);
+}
+
+.delete-btn {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.dark-mode .delete-btn {
+  background-color: rgba(248, 113, 113, 0.2);
+  color: #f87171;
+}
+
+.delete-btn:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+  transform: translateY(-2px);
+}
+
+.dark-mode .delete-btn:hover {
+  background-color: rgba(248, 113, 113, 0.3);
+}
+
+/* Positioning for different card types */
+.skill-item, 
+.project-card, 
+.timeline-content, 
+.education-card, 
+.certification-card {
+  position: relative;
+}
+
+/* Card hover effects */
+.skill-item,
+.project-card,
+.education-card,
+.certification-card,
+.achievement-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-item:hover,
+.project-card:hover,
+.education-card:hover,
+.certification-card:hover,
+.achievement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark-mode .skill-item:hover,
+.dark-mode .project-card:hover,
+.dark-mode .education-card:hover,
+.dark-mode .certification-card:hover,
+.dark-mode .achievement-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+}
+
+/* Certification card adjustments */
+.certification-card {
+  display: block;
+  text-decoration: none;
+}
+
+.certification-content {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.certification-details {
+  flex: 1;
+}
+
+/* Timeline item adjustments */
+.timeline-item .item-actions {
+  top: 0;
+  right: 0;
+}

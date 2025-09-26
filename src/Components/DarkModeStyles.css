@@ -1,0 +1,52 @@
+/* Enhanced dark mode typography and general styles */
+.dark-mode .stat-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-mode .stat-value {
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .stat-desc {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-mode .social-card.cv {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(124, 58, 237, 0.8));
+  border: none;
+}
+
+.dark-mode .social-card.github .social-icon,
+.dark-mode .social-card.linkedin .social-icon {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .profile-name {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.95), rgba(199, 210, 254, 0.95));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+/* Fixing dark mode detail label icon */
+.dark-mode .detail-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.dark-mode .detail-label .icon {
+  font-style: normal;
+  background: rgba(15, 23, 42, 0.8);
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}

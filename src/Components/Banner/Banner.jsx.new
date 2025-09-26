@@ -1,0 +1,63 @@
+import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Banner.css";
+
+export default function Banner({ onLoginRequired }) {
+  const ref = useRef(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) el.classList.add("sb-banner__visible");
+    }, { threshold: .4 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  const handleClick = (path) => (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem('token');
+    if (!token) {
+      onLoginRequired();
+    } else {
+      navigate(path);
+    }
+  };
+
+  return (
+    <section className="sb-banner" aria-label="Hero">
+      <div className="sb-banner__wrap" ref={ref}>
+        <div className="sb-banner__text">
+          <h1>
+            The task switchboard that <span className="accent">helps teams move fast</span>
+          </h1>
+          <p>
+            Track tasks, progress, and ownership—effortlessly. Lightweight by design, built for mobile,
+            and ready for your team's momentum.
+          </p>
+          <div className="sb-banner__cta">
+            <button 
+              className="btn btn--primary" 
+              onClick={handleClick('/assignments')}
+            >
+              Go to Assignments
+            </button>
+            <button 
+              className="btn btn--ghost" 
+              onClick={handleClick('/leaderboard')}
+            >
+              View Leaderboard
+            </button>
+          </div>
+        </div>
+
+        {/* Keep right side clean; placeholder reserved for future visuals */}
+        <div className="sb-banner__right" aria-hidden="true">
+          {/* Optional: add a decorative gradient orb if you want */}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,132 @@
+/* Premium tasks grid layout */
+.premium-tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 20px;
+  max-width: 100%;
+}
+
+/* Roadmap task styling based on Task.jsx */
+.roadmap-task {
+  margin-bottom: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 260px;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.roadmap-task-wrapper {
+  margin-bottom: 0;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+/* Color variations for tasks */
+.roadmap-task-wrapper.green-task .task-tile {
+  border-left: 4px solid #4CAF50;
+}
+
+.roadmap-task-wrapper.blue-task .task-tile {
+  border-left: 4px solid #2196F3;
+}
+
+.roadmap-task-wrapper.purple-task .task-tile {
+  border-left: 4px solid #9C27B0;
+}
+
+.roadmap-task-wrapper.orange-task .task-tile {
+  border-left: 4px solid #FF9800;
+}
+
+.roadmap-task-wrapper.red-task .task-tile {
+  border-left: 4px solid #F44336;
+}
+
+/* Dark mode color variations */
+.dark-mode .roadmap-task-wrapper.green-task .task-tile {
+  border-left: 4px solid rgba(76, 175, 80, 0.8);
+  box-shadow: -2px 0 12px rgba(76, 175, 80, 0.2);
+}
+
+.dark-mode .roadmap-task-wrapper.blue-task .task-tile {
+  border-left: 4px solid rgba(33, 150, 243, 0.8);
+  box-shadow: -2px 0 12px rgba(33, 150, 243, 0.2);
+}
+
+.dark-mode .roadmap-task-wrapper.purple-task .task-tile {
+  border-left: 4px solid rgba(156, 39, 176, 0.8);
+  box-shadow: -2px 0 12px rgba(156, 39, 176, 0.2);
+}
+
+.dark-mode .roadmap-task-wrapper.orange-task .task-tile {
+  border-left: 4px solid rgba(255, 152, 0, 0.8);
+  box-shadow: -2px 0 12px rgba(255, 152, 0, 0.2);
+}
+
+.dark-mode .roadmap-task-wrapper.red-task .task-tile {
+  border-left: 4px solid rgba(244, 67, 54, 0.8);
+  box-shadow: -2px 0 12px rgba(244, 67, 54, 0.2);
+}
+
+/* Selected task styling */
+.roadmap-task-wrapper.selected .task-tile {
+  box-shadow: 0 0 20px rgba(74, 164, 247, 0.3);
+  border-color: var(--sb-accent);
+  transform: translateY(-4px);
+}
+
+.dark-mode .roadmap-task-wrapper.selected .task-tile {
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+  background: rgba(30, 41, 59, 0.9);
+}
+
+/* Task selection indicator */
+.task-select-indicator {
+  font-size: 13px;
+  color: var(--sb-sub);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.roadmap-task-wrapper.selected .task-select-indicator {
+  color: var(--sb-accent);
+  font-weight: 600;
+  opacity: 1;
+}
+
+.dark-mode .roadmap-task-wrapper.selected .task-select-indicator {
+  color: rgba(96, 165, 250, 0.9);
+}
+
+/* Animation for task selection */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(74, 164, 247, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(74, 164, 247, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 164, 247, 0); }
+}
+
+.roadmap-task-wrapper.selected .task-selected-icon {
+  animation: pulse 1.5s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+  .premium-tasks-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .premium-tasks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .premium-tasks-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

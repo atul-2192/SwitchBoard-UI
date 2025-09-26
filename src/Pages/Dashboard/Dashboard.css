@@ -1,0 +1,70 @@
+/* Base app styles (dark+positive vibe) */
+html, body, #root{ height:100%; background:#0b0d1c; }
+*{ box-sizing:border-box; }
+body{ margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; color:var(--sb-txt); }
+img{ max-width:100%; display:block; }
+main{ display:block; }
+a, button, input{ font-family: inherit; }
+
+/* Reduce motion for those who prefer it */
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+}
+
+.sb-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--sb-bg);
+}
+
+main {
+  flex: 1;
+}
+
+/* Container width consistency */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Responsive spacing */
+@media (max-width: 820px) {
+  .container {
+    padding: 0 12px;
+  }
+}
+
+/* Loading state */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: var(--sb-sub);
+}
+
+/* Error state */
+.error {
+  text-align: center;
+  padding: 24px;
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+  border-radius: 12px;
+  margin: 16px;
+}
+
+/* Transitions */
+.page-transition {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
