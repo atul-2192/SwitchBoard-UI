@@ -4,9 +4,9 @@ const EditButton = ({ isOwner, onClick, activeTab }) => {
   if (!isOwner) return null;
   
   return (
-    <div className="edit-mode-toggle">
+    <div className="portfolio-edit-mode-toggle">
       <button
-        className="update-portfolio-btn"
+        className="portfolio-update-btn"
         onClick={() => onClick(activeTab)}
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

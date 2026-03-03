@@ -1,0 +1,273 @@
+/* ProfilePage Coffee Theme - Pinterest-Inspired Background */
+
+/* Add top margin to profile header */
+.profile-header {
+  margin-top: 80px !important;
+}
+
+/* ================ PINTEREST-STYLE BANNER BACKGROUND ================ */
+
+/* Modern coffee gradient with organic shapes */
+.banner-mesh {
+  background: 
+    linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(210, 105, 30, 0.8) 100%),
+    linear-gradient(45deg, #8B4513 0%, #D2691E 100%) !important;
+  position: relative !important;
+}
+
+.dark-mode .banner-mesh {
+  background: 
+    linear-gradient(135deg, rgba(45, 27, 20, 0.95) 0%, rgba(74, 47, 31, 0.9) 100%),
+    linear-gradient(45deg, #2D1B14 0%, #4a2f1f 100%) !important;
+}
+
+/* Add decorative organic blob shapes - Pinterest style */
+.banner-gradient {
+  background: 
+    radial-gradient(ellipse at 20% 30%, rgba(222, 184, 135, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 60%, rgba(205, 133, 63, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 80%, rgba(139, 69, 19, 0.2) 0%, transparent 40%) !important;
+  mix-blend-mode: soft-light !important;
+}
+
+/* Subtle dot pattern - modern Pinterest aesthetic */
+.banner-grid {
+  background-image: 
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 1px, transparent 1px) !important;
+  background-size: 30px 30px !important;
+  opacity: 0.4 !important;
+}
+
+.dark-mode .banner-grid {
+  background-image: 
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.08) 1px, transparent 1px) !important;
+}
+
+/* Add subtle wave pattern overlay */
+.banner::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      rgba(255, 255, 255, 0.03) 20px,
+      rgba(255, 255, 255, 0.03) 40px
+    ) !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+/* Remove particles animation */
+.particle {
+  display: none !important;
+}
+
+/* Elegant glassmorphic card behind user name - Pinterest style */
+.banner-typography {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.08) 100%
+  ) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-radius: 28px !important;
+  padding: 48px 70px !important;
+  border: 2px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 0 0 1px rgba(139, 69, 19, 0.1) !important;
+  position: relative !important;
+}
+
+/* Add subtle shine effect on card */
+.banner-typography::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 50% !important;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 100%
+  ) !important;
+  border-radius: 28px 28px 0 0 !important;
+  pointer-events: none !important;
+}
+
+/* Premium text styling with pure white */
+.banner-name {
+  color: #ffffff !important;
+  text-shadow: 
+    0 2px 10px rgba(0, 0, 0, 0.4),
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 6px 30px rgba(0, 0, 0, 0.2) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3)) !important;
+  position: relative !important;
+}
+
+.banner-name::after {
+  display: none !important;
+}
+
+/* Elegant title badge with glassmorphism */
+.banner-title {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  ) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 2px solid rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  position: relative !important;
+}
+
+/* Add subtle glow to title badge */
+.banner-title::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: -2px !important;
+  background: linear-gradient(135deg, #DEB887, #CD853F) !important;
+  border-radius: 50px !important;
+  opacity: 0.15 !important;
+  filter: blur(8px) !important;
+  z-index: -1 !important;
+}
+
+.title-text {
+  color: white !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: white !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  font-weight: 700 !important;
+}
+
+.title-text::after {
+  display: none !important;
+}
+
+.title-icon {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3)) !important;
+}
+
+/* ================ PAGE & CARDS ================ */
+
+/* Page background */
+.profile-page {
+  background-color: #F5F1E8 !important;
+}
+
+.dark-mode .profile-page {
+  background-color: #0d0907 !important;
+}
+
+/* Profile main card */
+.profile-main {
+  background: white !important;
+  border: 2px solid rgba(139, 69, 19, 0.1) !important;
+}
+
+.dark-mode .profile-main {
+  background: #1a1410 !important;
+  border-color: rgba(139, 69, 19, 0.2) !important;
+}
+
+/* Stats highlight card coffee gradient */
+.stat-card.highlight {
+  background: linear-gradient(90deg, #8B4513, #D2691E) !important;
+}
+
+.dark-mode .stat-card.highlight {
+  background: linear-gradient(90deg, #CD853F, #DEB887) !important;
+  color: #1a1410 !important;
+}
+
+/* ================ BUTTONS ================ */
+
+/* Buttons with coffee theme */
+.btn--primary {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%) !important;
+}
+
+.btn--primary:hover {
+  background: linear-gradient(135deg, #723909 0%, #B8591E 100%) !important;
+}
+
+.dark-mode .btn--primary {
+  background: linear-gradient(135deg, #CD853F 0%, #DEB887 100%) !important;
+  color: #1a1410 !important;
+}
+
+.btn--secondary {
+  border-color: #8B4513 !important;
+  color: #8B4513 !important;
+}
+
+.btn--secondary:hover {
+  background-color: rgba(139, 69, 19, 0.05) !important;
+}
+
+.dark-mode .btn--secondary {
+  border-color: #CD853F !important;
+  color: #CD853F !important;
+}
+
+/* ================ PROGRESS & ACCENTS ================ */
+
+/* Progress bar coffee gradient */
+.progress-fill {
+  background: linear-gradient(90deg, #8B4513 0%, #D2691E 100%) !important;
+}
+
+.dark-mode .progress-fill {
+  background: linear-gradient(90deg, #CD853F 0%, #DEB887 100%) !important;
+}
+
+/* Section titles coffee accent */
+.profile-details h2::after,
+.profile-social h2::after,
+.profile-progress h2::after {
+  background: linear-gradient(90deg, #8B4513, #D2691E) !important;
+}
+
+.dark-mode .profile-details h2::after,
+.dark-mode .profile-social h2::after,
+.dark-mode .profile-progress h2::after {
+  background: linear-gradient(90deg, #CD853F, #DEB887) !important;
+}
+
+/* ================ RESPONSIVE ================ */
+
+@media (max-width: 768px) {
+  .banner-typography {
+    padding: 30px 40px !important;
+    border-radius: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-typography {
+    padding: 24px 28px !important;
+    border-radius: 16px !important;
+  }
+}
+

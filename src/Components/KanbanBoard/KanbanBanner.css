@@ -1,0 +1,315 @@
+/* Professional Kanban Banner - Clean & Responsive Design */
+
+.kanban-banner {
+  position: relative;
+  background: var(--sb-card);
+  border: 1px solid var(--sb-border);
+  border-radius: 12px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.dark-mode .kanban-banner {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Subtle background pattern */
+.banner-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(var(--sb-accent-rgb), 0.05) 0%, 
+    rgba(var(--sb-accent-rgb), 0.02) 100%
+  );
+  border-radius: 50% 0 0 50%;
+}
+
+.dark-mode .banner-background {
+  background: linear-gradient(135deg, 
+    rgba(var(--sb-accent-rgb), 0.08) 0%, 
+    rgba(var(--sb-accent-rgb), 0.03) 100%
+  );
+}
+
+.banner-container {
+  position: relative;
+  z-index: 2;
+  padding: 32px;
+}
+
+/* Banner Content Layout */
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.banner-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.banner-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--sb-txt);
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
+.banner-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--sb-sub);
+  margin: 0;
+}
+
+/* Stats Section */
+.banner-stats {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 16px 20px;
+  background: rgba(var(--sb-accent-rgb), 0.06);
+  border-radius: 8px;
+  border: 1px solid rgba(var(--sb-accent-rgb), 0.1);
+  min-width: 80px;
+}
+
+.dark-mode .stat-item {
+  background: rgba(var(--sb-accent-rgb), 0.1);
+  border: 1px solid rgba(var(--sb-accent-rgb), 0.15);
+}
+
+.stat-number {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--sb-accent);
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--sb-sub);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Banner Actions */
+.banner-actions {
+  border-top: 1px solid var(--sb-border);
+  padding-top: 20px;
+}
+
+.dark-mode .banner-actions {
+  border-top: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.action-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--sb-sub);
+}
+
+.info-icon {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.info-text {
+  font-weight: 500;
+}
+
+/* Responsive Design for Tablets */
+@media (max-width: 1024px) {
+  .banner-container {
+    padding: 28px;
+  }
+  
+  .banner-content {
+    gap: 24px;
+  }
+  
+  .banner-title {
+    font-size: 24px;
+  }
+  
+  .banner-stats {
+    gap: 16px;
+  }
+  
+  .stat-item {
+    padding: 12px 16px;
+    min-width: 70px;
+  }
+  
+  .stat-number {
+    font-size: 20px;
+  }
+}
+
+/* Responsive Design for Small Tablets */
+@media (max-width: 768px) {
+  .banner-container {
+    padding: 24px;
+  }
+  
+  .banner-content {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  
+  .banner-title {
+    font-size: 22px;
+  }
+  
+  .banner-description {
+    font-size: 15px;
+  }
+  
+  .banner-stats {
+    align-self: stretch;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  .stat-item {
+    flex: 1;
+    padding: 12px 8px;
+    min-width: 0;
+  }
+  
+  .stat-number {
+    font-size: 18px;
+  }
+  
+  .stat-label {
+    font-size: 11px;
+  }
+  
+  .banner-background {
+    width: 200px;
+  }
+}
+
+/* Mobile Design */
+@media (max-width: 480px) {
+  .kanban-banner {
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .banner-container {
+    padding: 20px;
+  }
+  
+  .banner-content {
+    gap: 16px;
+  }
+  
+  .banner-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .banner-description {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .banner-stats {
+    gap: 8px;
+  }
+  
+  .stat-item {
+    padding: 10px 6px;
+  }
+  
+  .stat-number {
+    font-size: 16px;
+  }
+  
+  .stat-label {
+    font-size: 10px;
+  }
+  
+  .banner-actions {
+    padding-top: 16px;
+  }
+  
+  .action-info {
+    font-size: 13px;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .info-icon {
+    font-size: 14px;
+  }
+  
+  .banner-background {
+    width: 150px;
+    opacity: 0.7;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .banner-container {
+    padding: 16px;
+  }
+  
+  .banner-title {
+    font-size: 18px;
+  }
+  
+  .banner-description {
+    font-size: 13px;
+  }
+  
+  .stat-item {
+    padding: 8px 4px;
+  }
+  
+  .stat-number {
+    font-size: 14px;
+  }
+  
+  .stat-label {
+    font-size: 9px;
+  }
+  
+  .action-info {
+    font-size: 12px;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+/* Subtle hover effect for professional feel */
+.kanban-banner:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+
+.dark-mode .kanban-banner:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}

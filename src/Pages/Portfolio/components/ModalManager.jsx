@@ -8,9 +8,9 @@ import {
   CertificationForm,
   AchievementForm,
   OverviewForm,
-  ContactForm,
   SocialLinksForm,
-  CVUploadForm
+  CVUploadForm,
+  ProfileForm
 } from "../PortfolioForms";
 
 const ModalManager = ({
@@ -24,7 +24,8 @@ const ModalManager = ({
   showDeleteConfirmation,
   deleteInfo,
   handleConfirmDelete,
-  handleCancelDelete
+  handleCancelDelete,
+  saving = false
 }) => {
   if (!showModal && !showDeleteConfirmation) return null;
 
@@ -50,6 +51,7 @@ const ModalManager = ({
         confirmText="Delete"
         cancelText="Cancel"
         isDanger={true}
+        isLoading={saving}
       />
     );
   }
@@ -59,10 +61,16 @@ const ModalManager = ({
     return (
       <div className="modal-overlay">
         <div className="portfolio-modal">
-          <button className="close-button" onClick={handleCloseModal}>
+          <button className="close-button" onClick={handleCloseModal} disabled={saving}>
             &times;
           </button>
           <div className="modal-content">
+            {saving && (
+              <div className="modal-loading-overlay">
+                <div className="modal-loading-spinner"></div>
+                <p>Saving changes...</p>
+              </div>
+            )}
             {modalContent}
           </div>
         </div>
@@ -74,32 +82,56 @@ const ModalManager = ({
 };
 
 // Helper function to get the correct form component based on section
-export const getModalContent = (editSection, editItemId, portfolioData, handleSaveEdit) => {
+export const getModalContent = (editSection, editItemId, portfolioData, handleSaveEdit, handleCloseModal, userEmail = '') => {
+
+
+
+
+
+  
+  // Map section names to their data keys (handle plural forms)
+  const sectionDataKeys = {
+    'experience': 'experiences',
+    'education': 'educations',
+    'certificates': 'certificates',  // API uses 'certificates' not 'certifications'
+    'achievements': 'achievements',
+    'skills': 'skills',
+    'projects': 'projects'
+  };
+  
   // Get the section data and find the item if an ID is provided
-  const sectionData = portfolioData[editSection] || [];
+  const dataKey = sectionDataKeys[editSection] || editSection;
+  const sectionData = portfolioData?.[dataKey] || [];
   const itemToEdit = editItemId ? sectionData.find(item => item.id === editItemId) : null;
   
+
+
+
+
+
+  
   switch(editSection) {
+    case "profile":
+      return <ProfileForm profile={portfolioData || {}} onSave={handleSaveEdit} onCancel={handleCloseModal} isEditing={!!portfolioData} userEmail={userEmail} />;
     case "skills":
-      return <SkillForm item={itemToEdit} onSave={handleSaveEdit} isEditing={!!itemToEdit} />;
+
+      return <SkillForm skill={itemToEdit || {}} onSave={handleSaveEdit} onCancel={handleCloseModal} isEditing={!!itemToEdit} portfolioId={portfolioData?.id} />;
     case "projects":
-      return <ProjectForm item={itemToEdit} onSave={handleSaveEdit} isEditing={!!itemToEdit} />;
+      return <ProjectForm project={itemToEdit || {}} onSave={handleSaveEdit} onCancel={handleCloseModal} isEditing={!!itemToEdit} />;
     case "experience":
-      return <ExperienceForm item={itemToEdit} onSave={handleSaveEdit} isEditing={!!itemToEdit} />;
+      return <ExperienceForm experience={itemToEdit || {}} onSave={handleSaveEdit} onCancel={handleCloseModal} isEditing={!!itemToEdit} />;
     case "education":
-      return <EducationForm item={itemToEdit} onSave={handleSaveEdit} isEditing={!!itemToEdit} />;
+      return <EducationForm education={itemToEdit || {}} onSave={handleSaveEdit} onCancel={handleCloseModal} isEditing={!!itemToEdit} />;
     case "certificates":
-      return <CertificationForm item={itemToEdit} onSave={handleSaveEdit} isEditing={!!itemToEdit} />;
+      return <CertificationForm certification={itemToEdit || {}} onSave={handleSaveEdit} onCancel={handleCloseModal} isEditing={!!itemToEdit} />;
     case "achievements":
-      return <AchievementForm item={itemToEdit} onSave={handleSaveEdit} isEditing={!!itemToEdit} />;
+      return <AchievementForm achievement={itemToEdit || {}} onSave={handleSaveEdit} onCancel={handleCloseModal} isEditing={!!itemToEdit} />;
     case "overview":
-      return <OverviewForm data={portfolioData.overview} onSave={handleSaveEdit} />;
-    case "contact":
-      return <ContactForm data={portfolioData.contact} onSave={handleSaveEdit} />;
+      return <OverviewForm overview={portfolioData || {}} onSave={handleSaveEdit} onCancel={handleCloseModal} />;
     case "social":
-      return <SocialLinksForm data={portfolioData.social} onSave={handleSaveEdit} />;
+      return <SocialLinksForm social={portfolioData || {}} onSave={handleSaveEdit} onCancel={handleCloseModal} />;
     case "cv":
-      return <CVUploadForm onSave={handleSaveEdit} />;
+      return <CVUploadForm currentCV={portfolioData?.resumeLink || ""} onSave={handleSaveEdit} onCancel={handleCloseModal} />;
     default:
       return null;
   }

@@ -1,0 +1,540 @@
+/* Modern Kanban Card - Inspired by Linear, Notion & Asana */
+
+.kanban-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* Priority Accent Bar */
+.priority-accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: 0 0 0 12px;
+}
+
+.dark-mode .kanban-card {
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.kanban-card:hover {
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.dark-mode .kanban-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Status-based styling */
+.kanban-card.overdue {
+  border-color: rgba(239, 68, 68, 0.3);
+  background: rgba(254, 242, 242, 0.5);
+}
+
+.dark-mode .kanban-card.overdue {
+  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(127, 29, 29, 0.1);
+}
+
+.kanban-card.urgent {
+  border-color: rgba(245, 158, 11, 0.3);
+  background: rgba(255, 251, 235, 0.5);
+}
+
+.dark-mode .kanban-card.urgent {
+  border-color: rgba(245, 158, 11, 0.4);
+  background: rgba(120, 53, 15, 0.1);
+}
+
+.kanban-card.completed {
+  opacity: 0.8;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.kanban-card.completed .card-title {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* Card Header */
+.card-header {
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.card-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.card-id {
+  font-size: 11px;
+  font-weight: 500;
+  color: #6b7280;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.dark-mode .card-id {
+  color: #9ca3af;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+  word-wrap: break-word;
+  letter-spacing: -0.01em;
+}
+
+.dark-mode .card-title {
+  color: #f9fafb;
+}
+
+/* Meta Row */
+.card-meta-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Priority Badge */
+.priority-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-transform: capitalize;
+}
+
+.priority-icon {
+  font-size: 8px;
+}
+
+/* Reward Badge */
+.reward-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.reward-badge svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Card Description */
+.card-description {
+  margin-bottom: 12px;
+}
+
+.card-description p {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.dark-mode .card-description p {
+  color: #9ca3af;
+}
+
+/* Progress Section */
+.progress-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.dark-mode .progress-bar {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 11px;
+  font-weight: 500;
+  color: #6b7280;
+  min-width: 32px;
+  text-align: right;
+}
+
+.dark-mode .progress-text {
+  color: #9ca3af;
+}
+
+/* Card Tags */
+.card-tags {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 8px;
+  background: rgba(0, 0, 0, 0.04);
+  color: #374151;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.dark-mode .tag {
+  background: rgba(255, 255, 255, 0.06);
+  color: #d1d5db;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tag.more-tags {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.dark-mode .tag.more-tags {
+  color: #9ca3af;
+}
+
+/* Card Footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.footer-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.dark-mode .footer-item {
+  color: #9ca3af;
+}
+
+.footer-item svg {
+  width: 14px;
+  height: 14px;
+}
+
+.footer-item.time-estimate {
+  color: #059669;
+}
+
+.dark-mode .footer-item.time-estimate {
+  color: #34d399;
+}
+
+.footer-item.deadline.overdue {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.footer-item.deadline.urgent {
+  color: #d97706;
+  font-weight: 600;
+}
+
+.footer-item.deadline.warning {
+  color: #ca8a04;
+}
+
+/* Assignee */
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.assignee-container {
+  position: relative;
+}
+
+.assignee-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 11px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .assignee-avatar {
+  border: 2px solid #1e1e1e;
+}
+
+.assignee-avatar:hover {
+  transform: scale(1.1);
+}
+
+/* Card Actions */
+.card-actions-trigger {
+  position: relative;
+}
+
+.card-actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transform: translateY(-4px) scale(0.9);
+  transition: all 0.2s ease;
+}
+
+.card-actions.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.action-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  background: rgba(0, 0, 0, 0.04);
+  color: #6b7280;
+}
+
+.dark-mode .action-btn {
+  background: rgba(255, 255, 255, 0.06);
+  color: #9ca3af;
+}
+
+.action-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: #374151;
+  transform: scale(1.05);
+}
+
+.dark-mode .action-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #d1d5db;
+}
+
+.edit-btn:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #ef4444;
+  color: white;
+}
+
+.action-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Drag Handle */
+.drag-handle {
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d1d5db;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  cursor: grab;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 0 4px 4px 0;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: none;
+}
+
+.dark-mode .drag-handle {
+  background: rgba(30, 30, 30, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: none;
+  color: #4b5563;
+}
+
+.kanban-card:hover .drag-handle {
+  opacity: 1;
+}
+
+.drag-handle:hover {
+  color: #6b7280;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+/* Completion Indicator */
+.completion-indicator {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  background: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.completion-indicator svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .kanban-card {
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  
+  .card-title {
+    font-size: 13px;
+  }
+  
+  .card-description p {
+    font-size: 12px;
+  }
+  
+  .footer-item {
+    font-size: 11px;
+  }
+  
+  .assignee-avatar {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+  }
+  
+  .priority-badge {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+  
+  .reward-badge {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+  
+  .tag {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+}
+
+/* Animations */
+.kanban-card {
+  animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Drag state */
+.kanban-card[draggable="true"]:active {
+  cursor: grabbing;
+  transform: rotate(2deg) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+/* Focus state for accessibility */
+.kanban-card:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.kanban-card:focus:not(:focus-visible) {
+  outline: none;
+}

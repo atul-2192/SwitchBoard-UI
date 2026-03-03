@@ -1,0 +1,161 @@
+/* Item Actions Coffee Theme Overrides */
+
+/* Edit Button - Stroke Style */
+.edit-btn {
+  background: transparent !important;
+  color: #8B4513 !important;
+  border: 1.5px solid #8B4513 !important;
+  border-radius: 8px !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.dark-mode .edit-btn {
+  color: #D2691E !important;
+  border-color: #D2691E !important;
+}
+
+.edit-btn:hover {
+  background: rgba(139, 69, 19, 0.1) !important;
+  border-color: #D2691E !important;
+  color: #D2691E !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.25) !important;
+}
+
+.dark-mode .edit-btn:hover {
+  background: rgba(210, 105, 30, 0.15) !important;
+  border-color: #E67E22 !important;
+  color: #E67E22 !important;
+  box-shadow: 0 4px 12px rgba(210, 105, 30, 0.3) !important;
+}
+
+/* Delete Button - Stroke Style */
+.delete-btn {
+  background: transparent !important;
+  color: #dc2626 !important;
+  border: 1.5px solid #dc2626 !important;
+  border-radius: 8px !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.dark-mode .delete-btn {
+  color: #f87171 !important;
+  border-color: #f87171 !important;
+}
+
+.delete-btn:hover {
+  background: rgba(220, 38, 38, 0.1) !important;
+  border-color: #b91c1c !important;
+  color: #b91c1c !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25) !important;
+}
+
+.dark-mode .delete-btn:hover {
+  background: rgba(248, 113, 113, 0.15) !important;
+  border-color: #fca5a5 !important;
+  color: #fca5a5 !important;
+  box-shadow: 0 4px 12px rgba(248, 113, 113, 0.3) !important;
+}
+
+/* Item Actions Container */
+.item-actions {
+  backdrop-filter: blur(10px) !important;
+  background: rgba(245, 241, 232, 0.3) !important;
+  border-radius: 20px !important;
+  padding: 4px !important;
+  gap: 6px !important;
+}
+
+.dark-mode .item-actions {
+  background: rgba(26, 20, 16, 0.5) !important;
+}
+
+/* Card Hover Effects with Coffee Theme */
+.skill-item:hover,
+.project-card:hover,
+.education-card:hover,
+.certification-card:hover,
+.achievement-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 30px -5px rgba(139, 69, 19, 0.25), 
+              0 10px 15px -5px rgba(139, 69, 19, 0.15) !important;
+}
+
+.dark-mode .skill-item:hover,
+.dark-mode .project-card:hover,
+.dark-mode .education-card:hover,
+.dark-mode .certification-card:hover,
+.dark-mode .achievement-card:hover {
+  box-shadow: 0 12px 30px -5px rgba(205, 133, 63, 0.3), 
+              0 10px 15px -5px rgba(205, 133, 63, 0.2) !important;
+}
+
+/* Add subtle coffee accent border on hover */
+.skill-item:hover::before,
+.project-card:hover::before,
+.education-card:hover::before,
+.certification-card:hover::before,
+.achievement-card:hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #8B4513, #D2691E) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dark-mode .skill-item:hover::before,
+.dark-mode .project-card:hover::before,
+.dark-mode .education-card:hover::before,
+.dark-mode .certification-card:hover::before,
+.dark-mode .achievement-card:hover::before {
+  background: linear-gradient(135deg, #CD853F, #DEB887) border-box;
+  opacity: 0.4;
+}
+
+/* Button Icons (if using SVG icons) */
+.edit-btn svg,
+.delete-btn svg {
+  width: 14px !important;
+  height: 14px !important;
+  transition: transform 0.2s ease !important;
+}
+
+.edit-btn:hover svg,
+.delete-btn:hover svg {
+  transform: rotate(15deg) scale(1.1) !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .item-actions {
+    opacity: 1 !important; /* Always visible on mobile */
+    background: rgba(245, 241, 232, 0.8) !important;
+  }
+  
+  .dark-mode .item-actions {
+    background: rgba(26, 20, 16, 0.8) !important;
+  }
+  
+  .edit-btn, .delete-btn {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .item-actions {
+    top: 8px !important;
+    right: 8px !important;
+  }
+}

@@ -1,0 +1,509 @@
+/* Coffee Theme Overrides for Portfolio Page */
+/* Import this after the main Portfolio.css to apply coffee theme */
+
+/* Main Portfolio App - Coffee Background */
+.portfolio-app {
+  background: #F5F1E8 !important;
+}
+
+.dark-mode.portfolio-app {
+  background: #2D1B14 !important;
+}
+
+/* Header Gradient - Coffee Theme */
+.header-gradient {
+  background: linear-gradient(135deg, #2D1B14 0%, #3D2B1E 50%, #2D1B14 100%) !important;
+  opacity: 1 !important;
+}
+
+.dark-mode .header-gradient {
+  background: linear-gradient(135deg, #1A0F0A 0%, #2D1B14 50%, #1A0F0A 100%) !important;
+}
+
+/* Header Overlay - Coffee Pattern */
+.header-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23D2691E' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E") !important;
+}
+
+/* Avatar Ring - Coffee Gradient */
+.avatar-ring {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%) !important;
+  box-shadow: 
+    0 0 0 6px rgba(255, 255, 255, 0.95),
+    0 8px 24px rgba(139, 69, 19, 0.3) !important;
+}
+
+.dark-mode .avatar-ring {
+  box-shadow: 
+    0 0 0 6px rgba(45, 27, 20, 0.8),
+    0 8px 24px rgba(210, 105, 30, 0.4) !important;
+}
+
+/* Avatar Content */
+.avatar-content {
+  color: #2D1B14 !important;
+  background: white !important;
+}
+
+.dark-mode .avatar-content {
+  background: rgba(245, 241, 232, 0.95) !important;
+  color: #2D1B14 !important;
+}
+
+/* Profile Name - Coffee Gradient for Dark Mode */
+.profile-name {
+  color: #2D1B14;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.dark-mode .profile-name {
+  background: linear-gradient(135deg, #F5DEB3 0%, #FFE4B5 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Profile Title - Coffee Theme */
+.profile-title {
+  background: linear-gradient(135deg, #FFF4E6 0%, #FFE8CC 100%) !important;
+  color: #6b7c93 !important;
+  font-weight: 500 !important;
+  padding: 8px 16px !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(139, 69, 19, 0.1);
+}
+
+.dark-mode .profile-title {
+  color: #D2691E !important;
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.2) 0%, rgba(210, 105, 30, 0.15) 100%) !important;
+  border-color: rgba(210, 105, 30, 0.3) !important;
+}
+
+/* Social Links - Coffee Theme */
+.social-link {
+  background: linear-gradient(135deg, #FAF7F2 0%, #F5F1E8 100%) !important;
+  color: #2D1B14 !important;
+  box-shadow: 0 4px 12px rgba(45, 27, 20, 0.08) !important;
+  border: 1px solid rgba(45, 27, 20, 0.05) !important;
+}
+
+.social-link:hover {
+  background: linear-gradient(135deg, #FFF4E6 0%, #FFE8CC 100%) !important;
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.15) !important;
+  border-color: rgba(139, 69, 19, 0.15) !important;
+}
+
+.dark-mode .social-link {
+  background: rgba(45, 27, 20, 0.4) !important;
+  color: #F5DEB3 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(210, 105, 30, 0.2) !important;
+}
+
+.dark-mode .social-link:hover {
+  background: rgba(45, 27, 20, 0.6) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
+  border-color: rgba(210, 105, 30, 0.4) !important;
+}
+
+/* CV Download Button - Coffee Gradient */
+.cv-download-btn {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%) !important;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3) !important;
+  border-radius: 12px !important;
+}
+
+.cv-download-btn:hover {
+  background: linear-gradient(135deg, #A0522D 0%, #E67E22 100%) !important;
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.4) !important;
+}
+
+/* Portfolio Navigation - Coffee Theme */
+.portfolio-nav {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(45, 27, 20, 0.06) !important;
+}
+
+.dark-mode .portfolio-nav {
+  background: rgba(45, 27, 20, 0.95) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Nav Tabs - Coffee Accent */
+.nav-tab {
+  color: #6b7c93 !important;
+  font-weight: 600 !important;
+  border-bottom: 3px solid transparent !important;
+}
+
+.nav-tab:hover {
+  color: #8B4513 !important;
+  background: rgba(139, 69, 19, 0.05) !important;
+}
+
+.nav-tab.active {
+  color: #8B4513 !important;
+  border-bottom: 3px solid #D2691E !important;
+  background: rgba(139, 69, 19, 0.05) !important;
+}
+
+.dark-mode .nav-tab {
+  color: rgba(245, 222, 179, 0.7) !important;
+}
+
+.dark-mode .nav-tab:hover {
+  color: #F5DEB3 !important;
+  background: rgba(210, 105, 30, 0.1) !important;
+}
+
+.dark-mode .nav-tab.active {
+  color: #D2691E !important;
+  border-bottom: 3px solid #D2691E !important;
+  background: rgba(210, 105, 30, 0.15) !important;
+}
+
+/* Update Portfolio Button */
+.update-portfolio-btn {
+  background: white !important;
+  color: #2D1B14 !important;
+  border: 1px solid rgba(45, 27, 20, 0.1) !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 8px rgba(45, 27, 20, 0.05) !important;
+}
+
+.update-portfolio-btn:hover {
+  background: linear-gradient(135deg, #FFF4E6 0%, #FFE8CC 100%) !important;
+  color: #8B4513 !important;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15) !important;
+  border-color: rgba(139, 69, 19, 0.2) !important;
+}
+
+.dark-mode .update-portfolio-btn {
+  background: rgba(45, 27, 20, 0.6) !important;
+  color: #F5DEB3 !important;
+  border: 1px solid rgba(210, 105, 30, 0.3) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .update-portfolio-btn:hover {
+  background: rgba(45, 27, 20, 0.8) !important;
+  color: #D2691E !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  border-color: rgba(210, 105, 30, 0.5) !important;
+}
+
+/* Section Title - Coffee Theme */
+.section-title {
+  color: #2D1B14 !important;
+  font-family: 'Poppins', sans-serif !important;
+  border-bottom: 2px solid rgba(139, 69, 19, 0.15) !important;
+}
+
+.dark-mode .section-title {
+  color: #F5DEB3 !important;
+  border-bottom: 2px solid rgba(210, 105, 30, 0.3) !important;
+}
+
+/* Contact Info Card */
+.contact-info {
+  background: linear-gradient(135deg, #FAF7F2 0%, #F5F1E8 100%) !important;
+  box-shadow: 0 4px 12px rgba(45, 27, 20, 0.06) !important;
+  border: 1px solid rgba(45, 27, 20, 0.05) !important;
+}
+
+.dark-mode .contact-info {
+  background: rgba(45, 27, 20, 0.4) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(210, 105, 30, 0.2) !important;
+}
+
+.contact-info h3 {
+  color: #2D1B14 !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.dark-mode .contact-info h3 {
+  color: #F5DEB3 !important;
+}
+
+/* Skills Cards */
+.skill-card {
+  background: linear-gradient(135deg, #FAF7F2 0%, #F5F1E8 100%) !important;
+  border: 1px solid rgba(45, 27, 20, 0.08) !important;
+  box-shadow: 0 4px 12px rgba(45, 27, 20, 0.06) !important;
+  border-radius: 16px !important;
+}
+
+.skill-card:hover {
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.12) !important;
+  border-color: rgba(139, 69, 19, 0.15) !important;
+}
+
+.dark-mode .skill-card {
+  background: rgba(45, 27, 20, 0.4) !important;
+  border: 1px solid rgba(210, 105, 30, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .skill-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
+  border-color: rgba(210, 105, 30, 0.4) !important;
+}
+
+.skill-card h4 {
+  color: #2D1B14 !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.dark-mode .skill-card h4 {
+  color: #F5DEB3 !important;
+}
+
+/* Project Cards */
+.project-card {
+  background: white !important;
+  border: 1px solid rgba(45, 27, 20, 0.08) !important;
+  box-shadow: 0 4px 12px rgba(45, 27, 20, 0.06) !important;
+  border-radius: 16px !important;
+}
+
+.project-card:hover {
+  box-shadow: 0 8px 24px rgba(139, 69, 19, 0.12) !important;
+  border-color: rgba(139, 69, 19, 0.15) !important;
+}
+
+.dark-mode .project-card {
+  background: rgba(45, 27, 20, 0.4) !important;
+  border: 1px solid rgba(210, 105, 30, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .project-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+  border-color: rgba(210, 105, 30, 0.4) !important;
+}
+
+.project-card h3 {
+  color: #2D1B14 !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.dark-mode .project-card h3 {
+  color: #F5DEB3 !important;
+}
+
+/* Tech Stack Badges */
+.tech-badge {
+  background: linear-gradient(135deg, #FFF4E6 0%, #FFE8CC 100%) !important;
+  color: #8B4513 !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  border: 1px solid rgba(139, 69, 19, 0.15);
+}
+
+.dark-mode .tech-badge {
+  background: rgba(139, 69, 19, 0.2) !important;
+  color: #D2691E !important;
+  border-color: rgba(210, 105, 30, 0.3) !important;
+}
+
+/* Experience/Education Timeline */
+.timeline-item {
+  border-left: 2px solid #D2691E !important;
+}
+
+.timeline-dot {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%) !important;
+  box-shadow: 0 0 0 4px rgba(210, 105, 30, 0.2) !important;
+}
+
+.dark-mode .timeline-dot {
+  box-shadow: 0 0 0 4px rgba(210, 105, 30, 0.3) !important;
+}
+
+.timeline-content {
+  background: linear-gradient(135deg, #FAF7F2 0%, #F5F1E8 100%) !important;
+  border: 1px solid rgba(45, 27, 20, 0.08) !important;
+  box-shadow: 0 4px 12px rgba(45, 27, 20, 0.06) !important;
+  border-radius: 16px !important;
+}
+
+.dark-mode .timeline-content {
+  background: rgba(45, 27, 20, 0.4) !important;
+  border: 1px solid rgba(210, 105, 30, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.timeline-content h4 {
+  color: #2D1B14 !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.dark-mode .timeline-content h4 {
+  color: #F5DEB3 !important;
+}
+
+/* Certificate Cards */
+.certificate-card {
+  background: white !important;
+  border: 1px solid rgba(45, 27, 20, 0.08) !important;
+  box-shadow: 0 4px 12px rgba(45, 27, 20, 0.06) !important;
+  border-radius: 16px !important;
+}
+
+.certificate-card:hover {
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.12) !important;
+  border-color: rgba(139, 69, 19, 0.15) !important;
+}
+
+.dark-mode .certificate-card {
+  background: rgba(45, 27, 20, 0.4) !important;
+  border: 1px solid rgba(210, 105, 30, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .certificate-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
+  border-color: rgba(210, 105, 30, 0.4) !important;
+}
+
+/* Achievement Cards */
+.achievement-card {
+  background: linear-gradient(135deg, #FFF4E6 0%, #FFE8CC 100%) !important;
+  border: 1px solid rgba(139, 69, 19, 0.15) !important;
+  box-shadow: 0 4px 12px rgba(45, 27, 20, 0.06) !important;
+  border-radius: 16px !important;
+}
+
+.achievement-card:hover {
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.15) !important;
+}
+
+.dark-mode .achievement-card {
+  background: rgba(139, 69, 19, 0.2) !important;
+  border: 1px solid rgba(210, 105, 30, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .achievement-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Edit/Delete Action Buttons */
+.edit-btn {
+  background: transparent !important;
+  color: #8B4513 !important;
+  border: 1.5px solid #8B4513 !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+}
+
+.edit-btn:hover {
+  background: rgba(139, 69, 19, 0.1) !important;
+  border-color: #D2691E !important;
+  color: #D2691E !important;
+  box-shadow: 0 4px 8px rgba(139, 69, 19, 0.2) !important;
+}
+
+.dark-mode .edit-btn {
+  color: #D2691E !important;
+  border-color: #D2691E !important;
+}
+
+.dark-mode .edit-btn:hover {
+  background: rgba(210, 105, 30, 0.15) !important;
+  border-color: #E67E22 !important;
+  color: #E67E22 !important;
+  box-shadow: 0 4px 8px rgba(210, 105, 30, 0.3) !important;
+}
+
+.delete-btn {
+  background: transparent !important;
+  color: #dc2626 !important;
+  border: 1.5px solid #dc2626 !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+}
+
+.delete-btn:hover {
+  background: rgba(220, 38, 38, 0.1) !important;
+  border-color: #b91c1c !important;
+  color: #b91c1c !important;
+  box-shadow: 0 4px 8px rgba(220, 38, 38, 0.2) !important;
+}
+
+.dark-mode .delete-btn {
+  color: #f87171 !important;
+  border-color: #f87171 !important;
+}
+
+.dark-mode .delete-btn:hover {
+  background: rgba(248, 113, 113, 0.15) !important;
+  border-color: #fca5a5 !important;
+  color: #fca5a5 !important;
+  box-shadow: 0 4px 8px rgba(248, 113, 113, 0.3) !important;
+}
+
+/* Notification Banner */
+.notification-banner {
+  background: linear-gradient(135deg, #FFF4E6 0%, #FFE8CC 100%) !important;
+  border-left: 4px solid #D2691E !important;
+  color: #8B4513 !important;
+  border-radius: 12px !important;
+  font-weight: 500 !important;
+}
+
+.dark-mode .notification-banner {
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.15) 0%, rgba(210, 105, 30, 0.1) 100%) !important;
+  color: #D2691E !important;
+  border-left-color: #8B4513 !important;
+}
+
+/* Overview Text */
+.overview-text {
+  color: #2c3e50;
+  line-height: 1.8;
+}
+
+.dark-mode .overview-text {
+  color: rgba(245, 241, 232, 0.85) !important;
+}
+
+/* Responsive Mobile Optimizations */
+@media (max-width: 768px) {
+  .profile-hero {
+    gap: 20px !important;
+  }
+  
+  .avatar-ring {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  
+  .profile-name {
+    font-size: 24px !important;
+  }
+  
+  .social-link {
+    width: 56px !important;
+    height: 56px !important;
+  }
+  
+  .social-link svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-name {
+    font-size: 20px !important;
+  }
+  
+  .profile-title {
+    font-size: 12px !important;
+    padding: 6px 12px !important;
+  }
+}

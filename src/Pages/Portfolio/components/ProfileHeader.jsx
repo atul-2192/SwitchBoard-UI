@@ -1,19 +1,28 @@
 import React from "react";
 
 const ProfileHeader = ({ portfolioData }) => {
+  // Extract data from the actual API response structure
+  // API returns: fullName, bio, githubLink, linkedInLink, twitterLink, etc.
+  const fullName = portfolioData?.fullName || 'Your Name';
+  const bio = portfolioData?.bio || 'Your Title';
+  const githubLink = portfolioData?.githubLink;
+  const linkedInLink = portfolioData?.linkedInLink;
+  const twitterLink = portfolioData?.twitterLink;
+  const resumeLink = portfolioData?.resumeLink;
+  
   return (
-    <div className="profile-hero">
-      <div className="profile-info">
-        <h1 className="profile-name">{portfolioData.name}</h1>
-        <div className="profile-title">{portfolioData.title}</div>
+    <div className="portfolio-profile-hero">
+      <div className="portfolio-profile-info">
+        <h1 className="portfolio-profile-name">{fullName}</h1>
+        <div className="portfolio-profile-title">{bio}</div>
 
-        <div className="profile-social">
-          {portfolioData.social.github && (
+        <div className="portfolio-profile-social">
+          {githubLink && (
             <a
-              href={`https://github.com/${portfolioData.social.github}`}
+              href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="social-link"
+              className="portfolio-social-link"
             >
               <svg
                 width="24"
@@ -30,12 +39,12 @@ const ProfileHeader = ({ portfolioData }) => {
             </a>
           )}
 
-          {portfolioData.social.linkedin && (
+          {linkedInLink && (
             <a
-              href={`https://linkedin.com/in/${portfolioData.social.linkedin}`}
+              href={linkedInLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="social-link"
+              className="portfolio-social-link"
             >
               <svg
                 width="24"
@@ -52,12 +61,12 @@ const ProfileHeader = ({ portfolioData }) => {
             </a>
           )}
 
-          {portfolioData.social.twitter && (
+          {twitterLink && (
             <a
-              href={`https://twitter.com/${portfolioData.social.twitter}`}
+              href={twitterLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="social-link"
+              className="portfolio-social-link"
             >
               <svg
                 width="24"
@@ -74,34 +83,33 @@ const ProfileHeader = ({ portfolioData }) => {
             </a>
           )}
 
-         
-
-          <a
-            href="#contact"
-            className="social-link cv-download-btn portfolio-github-btn"
-            onClick={(e) => {
-              e.preventDefault();
-              // Handle downloading CV or showing contact info
-            }}
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          {resumeLink && (
+            <a
+              href={resumeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="portfolio-social-link portfolio-cv-download-btn portfolio-github-btn"
+              download
             >
-              <path
-                d="M6.9 13.9L12 18.9L17.1 13.9L15.7 12.5L13 15.2V3H11V15.2L8.3 12.5L6.9 13.9Z"
-                fill="currentColor"
-              />
-              <path
-                d="M19 20H5V18H3V20C3 21.1 3.9 22 5 22H19C20.1 22 21 21.1 21 20V18H19V20Z"
-                fill="currentColor"
-              />
-            </svg>
-            Download CV
-          </a>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.9 13.9L12 18.9L17.1 13.9L15.7 12.5L13 15.2V3H11V15.2L8.3 12.5L6.9 13.9Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M19 20H5V18H3V20C3 21.1 3.9 22 5 22H19C20.1 22 21 21.1 21 20V18H19V20Z"
+                  fill="currentColor"
+                />
+              </svg>
+              Download CV
+            </a>
+          )}
         </div>
       </div>
     </div>

@@ -1,0 +1,409 @@
+/* Portfolio Forms Coffee Theme Overrides */
+
+/* Form Container */
+.portfolio-form {
+  background: #F5F1E8 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 25px -5px rgba(45, 27, 20, 0.15), 0 10px 10px -5px rgba(45, 27, 20, 0.1) !important;
+}
+
+.dark-mode .portfolio-form {
+  background: #1a1410 !important;
+  border: 1px solid rgba(139, 69, 19, 0.2) !important;
+}
+
+/* Form Headings */
+.portfolio-form h3 {
+  color: #2D1B14 !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+.portfolio-form h3:after {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%) !important;
+  height: 4px !important;
+  width: 80px !important;
+}
+
+.dark-mode .portfolio-form h3 {
+  color: #F5F1E8 !important;
+}
+
+.dark-mode .portfolio-form h3:after {
+  background: linear-gradient(135deg, #CD853F 0%, #DEB887 100%) !important;
+}
+
+/* Form Labels */
+.form-group label {
+  color: #2D1B14 !important;
+  font-weight: 600 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 14px !important;
+}
+
+.dark-mode .form-group label {
+  color: #F5F1E8 !important;
+}
+
+/* Input Fields, Textareas, and Selects */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: white !important;
+  border: 2px solid #e8dfd4 !important;
+  border-radius: 10px !important;
+  color: #2D1B14 !important;
+  font-family: 'Inter', sans-serif !important;
+  transition: all 0.3s ease !important;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea,
+.dark-mode .form-group select {
+  background: #0f0a08 !important;
+  border-color: rgba(139, 69, 19, 0.3) !important;
+  color: #F5F1E8 !important;
+}
+
+/* Coffee-themed select dropdown arrow - Already defined in main CSS */
+/* Arrow colors are set in PortfolioForms.css with coffee theme */
+
+/* Select options in coffee theme - Enhanced for mobile */
+.form-group select option {
+  background: white !important;
+  color: #2D1B14 !important;
+  padding: 14px 16px !important; /* Increased for mobile comfort */
+  font-size: 16px !important; /* Mobile-friendly */
+  line-height: 1.6 !important;
+}
+
+.dark-mode .form-group select option {
+  background: #0f0a08 !important;
+  color: #F5F1E8 !important;
+}
+
+/* Focus States */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none !important;
+  border-color: #8B4513 !important;
+  box-shadow: 0 0 0 4px rgba(139, 69, 19, 0.15) !important;
+}
+
+.dark-mode .form-group input:focus,
+.dark-mode .form-group textarea:focus,
+.dark-mode .form-group select:focus {
+  border-color: #CD853F !important;
+  box-shadow: 0 0 0 4px rgba(205, 133, 63, 0.15) !important;
+}
+
+/* Range Slider */
+.form-group input[type="range"] {
+  background: linear-gradient(to right, 
+    #8B4513 0%, 
+    #8B4513 var(--range-progress, 50%), 
+    #e8dfd4 var(--range-progress, 50%), 
+    #e8dfd4 100%) !important;
+  border: none !important;
+  height: 6px !important;
+}
+
+.dark-mode .form-group input[type="range"] {
+  background: linear-gradient(to right, 
+    #CD853F 0%, 
+    #CD853F var(--range-progress, 50%), 
+    rgba(139, 69, 19, 0.3) var(--range-progress, 50%), 
+    rgba(139, 69, 19, 0.3) 100%) !important;
+}
+
+.form-group input[type="range"]::-webkit-slider-thumb {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%) !important;
+  width: 20px !important;
+  height: 20px !important;
+  border: 3px solid white !important;
+  box-shadow: 0 2px 6px rgba(45, 27, 20, 0.3) !important;
+}
+
+.dark-mode .form-group input[type="range"]::-webkit-slider-thumb {
+  background: linear-gradient(135deg, #CD853F 0%, #DEB887 100%) !important;
+  border-color: #1a1410 !important;
+}
+
+.form-group input[type="range"]::-moz-range-thumb {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%) !important;
+  width: 20px !important;
+  height: 20px !important;
+  border: 3px solid white !important;
+  box-shadow: 0 2px 6px rgba(45, 27, 20, 0.3) !important;
+}
+
+.dark-mode .form-group input[type="range"]::-moz-range-thumb {
+  background: linear-gradient(135deg, #CD853F 0%, #DEB887 100%) !important;
+  border-color: #1a1410 !important;
+}
+
+/* Placeholders */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #a89584 !important;
+}
+
+.dark-mode .form-group input::placeholder,
+.dark-mode .form-group textarea::placeholder {
+  color: rgba(205, 133, 63, 0.5) !important;
+}
+
+/* Form Actions Border */
+.form-actions,
+.portfolio-form-actions {
+  border-top: 2px solid rgba(139, 69, 19, 0.15) !important;
+}
+
+.dark-mode .form-actions,
+.dark-mode .portfolio-form-actions {
+  border-top: 2px solid rgba(139, 69, 19, 0.3) !important;
+}
+
+/* Cancel Button */
+.btn-cancel,
+.portfolio-btn-cancel {
+  background-color: white !important;
+  color: #2D1B14 !important;
+  border: 2px solid #e8dfd4 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 6px rgba(45, 27, 20, 0.08) !important;
+}
+
+.dark-mode .btn-cancel,
+.dark-mode .portfolio-btn-cancel {
+  background-color: #0f0a08 !important;
+  color: #F5F1E8 !important;
+  border: 2px solid rgba(139, 69, 19, 0.3) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+}
+
+.btn-cancel:hover,
+.portfolio-btn-cancel:hover {
+  background-color: #F5F1E8 !important;
+  border-color: #8B4513 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(45, 27, 20, 0.15) !important;
+}
+
+.dark-mode .btn-cancel:hover,
+.dark-mode .portfolio-btn-cancel:hover {
+  background-color: #1a1410 !important;
+  border-color: #CD853F !important;
+  box-shadow: 0 4px 12px rgba(205, 133, 63, 0.2) !important;
+}
+
+.btn-cancel:active,
+.portfolio-btn-cancel:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 4px rgba(45, 27, 20, 0.1) !important;
+}
+
+/* Save/Create Portfolio Button */
+.btn-save,
+.portfolio-btn-save {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%) !important;
+  color: white !important;
+  border: none !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-save:hover,
+.portfolio-btn-save:hover {
+  background: linear-gradient(135deg, #723909 0%, #B8591E 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(139, 69, 19, 0.4) !important;
+}
+
+.btn-save:active,
+.portfolio-btn-save:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3) !important;
+}
+
+.dark-mode .btn-save,
+.dark-mode .portfolio-btn-save {
+  background: linear-gradient(135deg, #CD853F 0%, #DEB887 100%) !important;
+  color: #1a1410 !important;
+  box-shadow: 0 4px 12px rgba(205, 133, 63, 0.3) !important;
+}
+
+.dark-mode .btn-save:hover,
+.dark-mode .portfolio-btn-save:hover {
+  background: linear-gradient(135deg, #B8762F 0%, #C9A877 100%) !important;
+  box-shadow: 0 6px 16px rgba(205, 133, 63, 0.4) !important;
+}
+
+/* Form Actions Container */
+.form-actions,
+.portfolio-form-actions {
+  border-top: 1px solid #e8dfd4 !important;
+}
+
+.dark-mode .form-actions,
+.dark-mode .portfolio-form-actions {
+  border-top: 1px solid rgba(139, 69, 19, 0.2) !important;
+}
+
+/* Help Text */
+.form-help {
+  color: #6b5444 !important;
+}
+
+.dark-mode .form-help {
+  color: rgba(205, 133, 63, 0.7) !important;
+}
+
+/* Error States */
+.form-group input.error,
+.form-group textarea.error,
+.form-group select.error {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+.dark-mode .form-group input.error,
+.dark-mode .form-group textarea.error,
+.dark-mode .form-group select.error {
+  border-color: #ef4444 !important;
+}
+
+/* Success States */
+.form-group input.success,
+.form-group textarea.success,
+.form-group select.success {
+  border-color: #16a34a !important;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1) !important;
+}
+
+.dark-mode .form-group input.success,
+.dark-mode .form-group textarea.success,
+.dark-mode .form-group select.success {
+  border-color: #22c55e !important;
+}
+
+/* Checkbox and Radio Custom Styling */
+.form-group input[type="checkbox"],
+.form-group input[type="radio"] {
+  width: auto !important;
+  accent-color: #8B4513 !important;
+}
+
+.dark-mode .form-group input[type="checkbox"],
+.dark-mode .form-group input[type="radio"] {
+  accent-color: #CD853F !important;
+}
+
+/* File Upload */
+.form-group input[type="file"] {
+  padding: 10px !important;
+  cursor: pointer !important;
+}
+
+.form-group input[type="file"]::file-selector-button {
+  padding: 8px 16px !important;
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  margin-right: 12px !important;
+  transition: all 0.2s ease !important;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+  background: linear-gradient(135deg, #723909 0%, #B8591E 100%) !important;
+  transform: scale(1.05) !important;
+}
+
+.dark-mode .form-group input[type="file"]::file-selector-button {
+  background: linear-gradient(135deg, #CD853F 0%, #DEB887 100%) !important;
+  color: #1a1410 !important;
+}
+
+/* Disabled States */
+.form-group input:disabled,
+.form-group textarea:disabled,
+.form-group select:disabled {
+  background: #e8dfd4 !important;
+  color: #9b8875 !important;
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+}
+
+.dark-mode .form-group input:disabled,
+.dark-mode .form-group textarea:disabled,
+.dark-mode .form-group select:disabled {
+  background: rgba(139, 69, 19, 0.1) !important;
+  color: rgba(205, 133, 63, 0.5) !important;
+}
+
+/* Select Dropdown - Removed custom arrows, uses base styling from PortfolioForms.css */
+/* No coffee theme arrow overrides - keeping it clean and simple */
+
+.dark-mode .form-group select option {
+  background-color: #1f2937 !important;
+  color: #e5e7eb !important;
+}
+
+/* Date and Time Inputs */
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group input[type="datetime-local"] {
+  color-scheme: light !important;
+}
+
+.dark-mode .form-group input[type="date"],
+.dark-mode .form-group input[type="time"],
+.dark-mode .form-group input[type="datetime-local"] {
+  color-scheme: dark !important;
+}
+
+/* Number Input Spinners */
+.form-group input[type="number"]::-webkit-inner-spin-button,
+.form-group input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .portfolio-form {
+    padding: 20px !important;
+    border-radius: 12px !important;
+  }
+  
+  .portfolio-form h3 {
+    font-size: 20px !important;
+  }
+  
+  .btn-cancel, .btn-save,
+  .portfolio-btn-cancel, .portfolio-btn-save {
+    padding: 14px 20px !important;
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-form {
+    padding: 16px !important;
+    border-radius: 10px !important;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+  }
+}

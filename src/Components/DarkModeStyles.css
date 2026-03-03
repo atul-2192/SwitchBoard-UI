@@ -50,3 +50,48 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(59, 130, 246, 0.2);
 }
+
+/* Dark Mode Form Inputs - Fix for black inputs */
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select,
+.dark-mode .form-input,
+.dark-mode .form-textarea {
+  background: rgba(30, 41, 59, 0.5) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(148, 163, 184, 0.3) !important;
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder,
+.dark-mode .form-input::placeholder,
+.dark-mode .form-textarea::placeholder {
+  color: rgba(148, 163, 184, 0.5) !important;
+}
+
+.dark-mode input:focus,
+.dark-mode textarea:focus,
+.dark-mode select:focus,
+.dark-mode .form-input:focus,
+.dark-mode .form-textarea:focus {
+  background: rgba(30, 41, 59, 0.7) !important;
+  border-color: rgba(59, 130, 246, 0.5) !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Dark mode select options */
+.dark-mode select option {
+  background: rgb(30, 41, 59);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Dark mode labels */
+.dark-mode label,
+.dark-mode .form-label {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Dark mode required asterisk */
+.dark-mode .required {
+  color: rgba(239, 68, 68, 0.8);
+}

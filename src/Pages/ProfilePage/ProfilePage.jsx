@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
-import Footer from "../../Components/Footer/Footer";
 import CountUp from "react-countup";
 import "./ProfilePage.css";
+import "./ProfilePageCoffeeTheme.css";
 import "../../Components/DarkModeStyles.css";
 
 // Sample user data (in a real app, this would come from your backend API)
@@ -247,7 +247,6 @@ export default function ProfilePage() {
           </section>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { authService } from "../../services/authService";
 import "./Banner.css";
 import Login from "../Login/Login";
 import Signup from "../Signup/Signup";
@@ -12,7 +13,7 @@ export default function Banner() {
   const [targetPath, setTargetPath] = useState("");
 
   const handleNavigation = (path) => {
-    const isLoggedIn = localStorage.getItem("user"); // Check if user is logged in
+    const isLoggedIn = authService.isAuthenticated(); // Use auth service instead
     if (!isLoggedIn) {
       setTargetPath(path);
       setShowLoginPopup(true);
@@ -45,15 +46,15 @@ export default function Banner() {
           <div className="sb-banner__cta">
             <button 
               className="btn btn--primary" 
-              onClick={() => handleNavigation("/assignments")}
+              onClick={() => handleNavigation("/roadmap")}
             >
-              Go to Assignments
+              Explore Roadmap
             </button>
             <button 
               className="btn btn--ghost" 
-              onClick={() => handleNavigation("/leaderboard")}
+              onClick={() => handleNavigation("/kanban")}
             >
-              View Leaderboard
+              View Workspace
             </button>
           </div>
         </div>

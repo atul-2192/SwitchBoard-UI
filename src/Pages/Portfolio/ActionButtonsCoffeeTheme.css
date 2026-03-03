@@ -1,0 +1,129 @@
+/* Action Buttons Coffee Theme Overrides */
+
+/* Add Item Button */
+.add-item-btn {
+  color: #8B4513 !important;
+  background: rgba(139, 69, 19, 0.1) !important;
+  border: 2px solid rgba(139, 69, 19, 0.2) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  border-radius: 10px !important;
+  padding: 10px 20px !important;
+  transition: all 0.3s ease !important;
+}
+
+.dark-mode .add-item-btn {
+  color: #CD853F !important;
+  background: rgba(205, 133, 63, 0.15) !important;
+  border: 2px solid rgba(205, 133, 63, 0.25) !important;
+}
+
+.add-item-btn:hover {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%) !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3) !important;
+  border-color: transparent !important;
+}
+
+.dark-mode .add-item-btn:hover {
+  background: linear-gradient(135deg, #CD853F 0%, #DEB887 100%) !important;
+  color: #1a1410 !important;
+  box-shadow: 0 4px 12px rgba(205, 133, 63, 0.4) !important;
+}
+
+.add-item-btn:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 6px rgba(139, 69, 19, 0.2) !important;
+}
+
+/* SVG Icon in Button */
+.add-item-btn svg {
+  width: 18px !important;
+  height: 18px !important;
+  transition: transform 0.3s ease !important;
+}
+
+.add-item-btn:hover svg {
+  transform: rotate(90deg) !important;
+}
+
+/* Section Actions Container */
+.section-actions {
+  margin-bottom: 24px !important;
+}
+
+/* Alternative Button Style (if exists) */
+.action-btn-primary {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%) !important;
+  color: white !important;
+  border: none !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  padding: 10px 20px !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3) !important;
+}
+
+.dark-mode .action-btn-primary {
+  background: linear-gradient(135deg, #CD853F 0%, #DEB887 100%) !important;
+  color: #1a1410 !important;
+}
+
+.action-btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(139, 69, 19, 0.4) !important;
+}
+
+.action-btn-secondary {
+  background: white !important;
+  color: #8B4513 !important;
+  border: 2px solid #8B4513 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  padding: 10px 20px !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.dark-mode .action-btn-secondary {
+  background: #1a1410 !important;
+  color: #CD853F !important;
+  border-color: #CD853F !important;
+}
+
+.action-btn-secondary:hover {
+  background: rgba(139, 69, 19, 0.1) !important;
+  transform: translateY(-2px) !important;
+}
+
+.dark-mode .action-btn-secondary:hover {
+  background: rgba(205, 133, 63, 0.15) !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .add-item-btn {
+    font-size: 13px !important;
+    padding: 8px 16px !important;
+  }
+  
+  .add-item-btn svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-actions {
+    justify-content: center !important;
+  }
+  
+  .add-item-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}

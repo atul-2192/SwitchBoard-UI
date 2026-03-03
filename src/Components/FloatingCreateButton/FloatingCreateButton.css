@@ -1,0 +1,160 @@
+/* Floating Create Button Styles */
+.floating-create-button {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;  /* Back to original position - bottom-left */
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 8px 24px rgba(139, 69, 19, 0.4),
+    0 4px 12px rgba(139, 69, 19, 0.2),
+    0 0 0 0 rgba(139, 69, 19, 0.3); /* Glow effect base */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 9999;
+  font-size: 24px;
+  font-weight: bold;
+  /* Ensure button is always visible */
+  min-width: 60px;
+  min-height: 60px;
+  /* Add warm glow animation */
+  animation: warmGlow 3s ease-in-out infinite alternate;
+}
+
+/* Warm glow animation */
+@keyframes warmGlow {
+  0% {
+    box-shadow: 
+      0 8px 24px rgba(139, 69, 19, 0.4),
+      0 4px 12px rgba(139, 69, 19, 0.2),
+      0 0 20px rgba(210, 105, 30, 0.1);
+  }
+  100% {
+    box-shadow: 
+      0 8px 24px rgba(139, 69, 19, 0.4),
+      0 4px 12px rgba(139, 69, 19, 0.2),
+      0 0 30px rgba(210, 105, 30, 0.2);
+  }
+}
+
+.floating-create-button:hover {
+  transform: scale(1.15) translateY(-3px);
+  background: linear-gradient(135deg, #A0522D 0%, #E67E22 100%);
+  box-shadow: 
+    0 16px 40px rgba(139, 69, 19, 0.5),
+    0 8px 20px rgba(139, 69, 19, 0.3),
+    0 0 40px rgba(210, 105, 30, 0.3);
+  animation: none; /* Stop glow animation on hover */
+}
+
+.floating-create-button:active {
+  transform: scale(1.05) translateY(-1px);
+  box-shadow: 
+    0 6px 16px rgba(139, 69, 19, 0.4),
+    0 3px 8px rgba(139, 69, 19, 0.2),
+    0 0 20px rgba(210, 105, 30, 0.2);
+  transition: all 0.15s ease-out;
+}
+
+.dark-mode .floating-create-button:active {
+  box-shadow: 
+    0 6px 16px rgba(62, 39, 35, 0.4),
+    0 3px 8px rgba(93, 64, 55, 0.2),
+    0 0 20px rgba(93, 64, 55, 0.2);
+}
+
+.dark-mode .floating-create-button {
+  background: linear-gradient(135deg, #3E2723 0%, #5D4037 100%);
+  box-shadow: 
+    0 8px 24px rgba(62, 39, 35, 0.4),
+    0 4px 12px rgba(93, 64, 55, 0.2),
+    0 0 20px rgba(93, 64, 55, 0.1);
+  animation: darkWarmGlow 3s ease-in-out infinite alternate;
+}
+
+/* Dark mode warm glow animation */
+@keyframes darkWarmGlow {
+  0% {
+    box-shadow: 
+      0 8px 24px rgba(62, 39, 35, 0.4),
+      0 4px 12px rgba(93, 64, 55, 0.2),
+      0 0 20px rgba(93, 64, 55, 0.1);
+  }
+  100% {
+    box-shadow: 
+      0 8px 24px rgba(62, 39, 35, 0.4),
+      0 4px 12px rgba(93, 64, 55, 0.2),
+      0 0 30px rgba(93, 64, 55, 0.2);
+  }
+}
+
+.dark-mode .floating-create-button:hover {
+  background: linear-gradient(135deg, #4E2D26 0%, #6D4C41 100%);
+  box-shadow: 
+    0 16px 40px rgba(62, 39, 35, 0.5),
+    0 8px 20px rgba(93, 64, 55, 0.3),
+    0 0 40px rgba(93, 64, 55, 0.3);
+  animation: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .floating-create-button {
+    bottom: 20px;
+    left: 20px;  /* Back to original position - bottom-left */
+    width: 56px;
+    height: 56px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-create-button {
+    bottom: 16px;
+    left: 16px;  /* Back to original position - bottom-left */
+    width: 52px;
+    height: 52px;
+    font-size: 20px;
+  }
+}
+
+/* Ensure button doesn't get cut off on smaller screens */
+@media (max-width: 375px) {
+  .floating-create-button {
+    bottom: 12px;
+    left: 12px;  /* Back to original position - bottom-left */
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+}
+
+/* Animation for button appearance */
+.floating-create-button {
+  animation: fadeInUp 0.5s ease-out 0.3s both;
+}
+
+/* When modal is open, slightly fade button */
+.floating-create-button.modal-open {
+  opacity: 0.7;
+  transform: scale(0.95);
+  animation: none; /* Stop glow animation when modal is open */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

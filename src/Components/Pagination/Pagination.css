@@ -1,0 +1,337 @@
+/* Pagination Component - Following SwitchBoard UI patterns */
+
+.pagination-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+  padding: 20px 0;
+  position: relative;
+}
+
+/* Results info */
+.pagination-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.results-range {
+  font-size: 14px;
+  color: var(--sb-sub);
+  font-weight: 500;
+}
+
+/* Pagination controls */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--sb-card);
+  border: 1px solid var(--sb-border);
+  border-radius: 8px;
+  color: var(--sb-txt);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: center;
+}
+
+.pagination-btn:hover:not(.disabled) {
+  background: var(--sb-accent);
+  border-color: var(--sb-accent);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(var(--sb-accent-rgb), 0.3);
+}
+
+.pagination-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--sb-bg);
+  color: var(--sb-sub);
+}
+
+.pagination-btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Page numbers */
+.page-numbers {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.page-number {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sb-card);
+  border: 1px solid var(--sb-border);
+  border-radius: 8px;
+  color: var(--sb-txt);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.page-number:hover:not(.disabled):not(.active) {
+  background: rgba(var(--sb-accent-rgb), 0.1);
+  border-color: var(--sb-accent);
+  color: var(--sb-accent);
+}
+
+.page-number.active {
+  background: var(--sb-accent);
+  border-color: var(--sb-accent);
+  color: white;
+  box-shadow: 0 2px 8px rgba(var(--sb-accent-rgb), 0.3);
+}
+
+.page-number.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-ellipsis {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sb-sub);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Quick navigation */
+.quick-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--sb-border);
+}
+
+.page-jump-label {
+  font-size: 14px;
+  color: var(--sb-txt);
+  font-weight: 500;
+}
+
+.page-jump-select {
+  padding: 8px 12px;
+  background: var(--sb-card);
+  border: 1px solid var(--sb-border);
+  border-radius: 6px;
+  color: var(--sb-txt);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.page-jump-select:focus {
+  border-color: var(--sb-accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--sb-accent-rgb), 0.1);
+}
+
+.page-jump-total {
+  font-size: 14px;
+  color: var(--sb-sub);
+}
+
+/* Loading overlay */
+.pagination-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(var(--sb-card), 0.8);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(var(--sb-accent-rgb), 0.3);
+  border-top: 2px solid var(--sb-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dark mode */
+.dark-mode .pagination-btn,
+.dark-mode .page-number {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.dark-mode .pagination-btn:hover:not(.disabled),
+.dark-mode .page-number:hover:not(.disabled):not(.active) {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.dark-mode .pagination-loading {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .pagination-container {
+    gap: 12px;
+    margin-top: 24px;
+    padding: 16px 0;
+  }
+  
+  .pagination-controls {
+    gap: 8px;
+  }
+  
+  .pagination-btn {
+    padding: 8px 12px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+  
+  .btn-text {
+    display: none;
+  }
+  
+  .page-number {
+    width: 40px;
+    height: 40px;
+    font-size: 13px;
+  }
+  
+  .page-numbers {
+    gap: 4px;
+  }
+  
+  .pagination-ellipsis {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .quick-navigation {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-info {
+    text-align: center;
+  }
+  
+  .results-range {
+    font-size: 13px;
+  }
+  
+  .pagination-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .page-numbers {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .prev-btn {
+    order: 1;
+  }
+  
+  .next-btn {
+    order: 3;
+  }
+  
+  /* Hide some page numbers on very small screens */
+  .page-numbers .page-number:nth-child(n+6) {
+    display: none;
+  }
+  
+  .page-numbers .pagination-ellipsis:nth-child(n+6) {
+    display: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .pagination-btn,
+  .page-number {
+    border-width: 2px;
+  }
+  
+  .pagination-btn:hover:not(.disabled),
+  .page-number:hover:not(.disabled):not(.active) {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pagination-btn,
+  .page-number,
+  .loading-spinner {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .pagination-btn:hover:not(.disabled) {
+    transform: none !important;
+  }
+}
+
+/* Focus styles for accessibility */
+.pagination-btn:focus-visible,
+.page-number:focus-visible,
+.page-jump-select:focus-visible {
+  outline: 3px solid var(--sb-accent);
+  outline-offset: 2px;
+}
+
+.pagination-btn:focus:not(:focus-visible),
+.page-number:focus:not(:focus-visible),
+.page-jump-select:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Print styles */
+@media print {
+  .pagination-container {
+    display: none;
+  }
+}

@@ -4,6 +4,8 @@ import './Roadmap.css';
 import './premium-tasks.css';
 import './fixed-layout.css';
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://switchboardpro.in/api/v1';
+
 const Roadmap = () => {
   const [roadmaps, setRoadmaps] = useState([]);
   const [selectedRoadmap, setSelectedRoadmap] = useState(null);
@@ -15,22 +17,22 @@ const Roadmap = () => {
     const fetchRoadmaps = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:9001/api/Roadmap');
+        const response = await axios.get(`${API_BASE_URL.replace('/api/v1', '')}/api/Roadmap`);
         
-        console.log('API Response received');
+
         
         // Process the response to break circular references
         const processedData = processApiResponse(response.data);
         
         // Check if the processed data is an array
         if (Array.isArray(processedData)) {
-          console.log('Processed data is an array with length:', processedData.length);
+
           setRoadmaps(processedData);
           if (processedData.length > 0) {
             setSelectedRoadmap(processedData[0]);
           }
         } else {
-          console.log('Processed data is a single object');
+
           // If it's a single object, convert it to an array
           setRoadmaps([processedData]);
           setSelectedRoadmap(processedData);
@@ -38,7 +40,7 @@ const Roadmap = () => {
         
         setLoading(false);
       } catch (err) {
-        console.error('Error fetching roadmaps:', err);
+
         setError('Failed to load roadmaps. Please try again later.');
         setLoading(false);
       }
@@ -83,8 +85,8 @@ const Roadmap = () => {
 
   // Log the state whenever it changes to help debug
   useEffect(() => {
-    console.log('Roadmaps state:', roadmaps);
-    console.log('Selected roadmap:', selectedRoadmap);
+
+
   }, [roadmaps, selectedRoadmap]);
 
   const handleRoadmapSelect = (roadmap) => {
@@ -114,7 +116,7 @@ const Roadmap = () => {
 
   const handleAddToWorkspace = () => {
     // This functionality will be implemented later
-    console.log('Tasks to add to workspace:', selectedTasks);
+
     alert(`Selected ${selectedTasks.length} tasks for your workspace!`);
   };
 
